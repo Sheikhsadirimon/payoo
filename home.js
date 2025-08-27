@@ -31,6 +31,16 @@ function setInnerText(value) {
   const availableBalanceElement = document.getElementById("available-balance");
   availableBalanceElement.innerText = value;
 }
+
+// function to toggle
+function handleToggle(id) {
+  const forms = document.getElementsByClassName("form");
+
+  for (const form of forms) {
+    form.style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
 // add money btn-----------------------------
 document
   .getElementById("add-money-btn")
@@ -68,26 +78,44 @@ document.getElementById("withdraw-btn").addEventListener("click", function (e) {
 
   const totalNewAvailableBalance = availableBalance - amount;
 
-  setInnerText(totalNewAvailableBalance)
+  setInnerText(totalNewAvailableBalance);
 });
 
 //   toggling feature
 document.getElementById("add-btn").addEventListener("click", function () {
-  document.getElementById("cash-out-parent").style.display = "none";
+  handleToggle("add-money-parent");
 
-  document.getElementById("add-money-parent").style.display = "block";
-  document.getElementById("transfer-money-parent").style.display = "none";
+  const formBtns = document.getElementsByClassName("form-btn");
+
+  for (const btn of formBtns) {
+    btn.classList.remove("border-[#0874f2]" , "bg-[#0874f20d]");
+    console.log(btn)
+    btn.classList.add("border-gray-300")
+  }
+
+  document.getElementById("add-btn").classList.remove("border-gray-300");
+  document.getElementById("add-btn").classList.add("border-[#0874f2]" , "bg-[#0874f20d]");
 });
+
 document.getElementById("cash-out-btn").addEventListener("click", function () {
-  document.getElementById("cash-out-parent").style.display = "block";
+  handleToggle("cash-out-parent");
 
-  document.getElementById("add-money-parent").style.display = "none";
-  document.getElementById("transfer-money-parent").style.display = "none";
+  const formBtns = document.getElementsByClassName("form-btn");
+
+  for (const btn of formBtns) {
+    btn.classList.remove("border-[#0874f2]" , "bg-[#0874f20d]");
+    console.log(btn)
+    btn.classList.add("border-gray-300")
+  }
+
+  document.getElementById("cash-out-btn").classList.remove("border-gray-300");
+  document.getElementById("cash-out-btn").classList.add("border-[#0874f2]" , "bg-[#0874f20d]");
 });
 
+document.getElementById("transfer-btn").addEventListener("click", function () {
+  handleToggle("transfer-money-parent");
+});
 
-document.getElementById('transfer-btn').addEventListener('click',function(){
-    document.getElementById("add-money-parent").style.display = "none";
-    document.getElementById("cash-out-parent").style.display = "none";
-    document.getElementById("transfer-money-parent").style.display = "block";
-})
+document.getElementById("bonus-btn").addEventListener("click", function () {
+  handleToggle("get-bonus-parent");
+});

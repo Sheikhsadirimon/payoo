@@ -54,25 +54,25 @@
 <!-- card section -->
       <div class="min-h-[200px] grid grid-cols-3 gap-4">
         <div id="add-btn"
-          class="border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
+          class="form-btn border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
         >
           <img class="mx-auto" src="assets/wallet1.png" alt="" />
           <h2>Add Money</h2>
         </div>
         <div id="cash-out-btn"
-          class="border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
+          class="form-btn border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
         >
           <img class="mx-auto" src="assets/send1.png" alt="" />
           <h2>Cashout</h2>
         </div>
         <div id="transfer-btn"
-          class="border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
+          class="form-btn border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
         >
           <img class="mx-auto" src="assets/money1.png" alt="" />
           <h2>Transfer Money</h2>
         </div>
-        <div
-          class="border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
+        <div id="bonus-btn"
+          class="form-btn border-2 border-gray-300 text-center flex flex-col justify-center rounded-2xl"
         >
           <img class="mx-auto" src="assets/bonus1.png" alt="" />
           <h2>Get Bonus</h2>
@@ -94,7 +94,7 @@
 
     <div class="all-form-sections max-w-lg mx-auto p-5">
       <!-- add Money -->
-      <div id="add-money-parent" >
+      <div class="form" id="add-money-parent" >
         <h1 class="mb-3 text-xl font-semibold">Add Money</h1>
         <form action="" class="bg-white rounded-2xl p-8">
           <div>
@@ -137,7 +137,7 @@
      
       </div>
       <!-- cash out -->
-      <div id="cash-out-parent" style="display: none;">
+      <div class="form" id="cash-out-parent" style="display: none;">
         <h1 class="mb-3 text-xl font-semibold">Cash Out</h1>
          <form action="" class="bg-white rounded-2xl p-8">
           
@@ -170,8 +170,12 @@
         </form>
       </div>
       <!-- transfer money -->
-       <div id="transfer-money-parent" style="display: none;">
+       <div class="form" id="transfer-money-parent" style="display: none;">
         <h1 class="mb-3 text-xl font-semibold">Transfer Money</h1>
+       </div>
+       <!-- get bonus -->
+        <div class="form" id="get-bonus-parent" style="display: none;">
+        <h1 class="mb-3 text-xl font-semibold">Get Bonus</h1>
        </div>
     </div>
 
